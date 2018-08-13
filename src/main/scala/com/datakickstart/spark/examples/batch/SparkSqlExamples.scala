@@ -1,8 +1,8 @@
-package com.datakickstart.spark.examples
+package com.datakickstart.spark.examples.batch
 
 import java.lang.management.ManagementFactory
 
-import com.datakickstart.spark.examples.SparkExamples.conf
+import com.datakickstart.spark.examples.VehicleStops.VehicleStopRaw
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 

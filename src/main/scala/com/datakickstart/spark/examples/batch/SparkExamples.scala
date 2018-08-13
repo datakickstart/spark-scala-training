@@ -1,7 +1,10 @@
-package com.datakickstart.spark.examples
+package com.datakickstart.spark.examples.batch
 
 import java.lang.management.ManagementFactory
+
+import com.datakickstart.spark.examples.VehicleStops
 import org.apache.spark.{SparkConf, SparkContext}
+
 import scala.util.Try
 
 object SparkExamples extends App {
@@ -33,7 +36,7 @@ object SparkExamples extends App {
     val record = line.split(",")
     val MS_IN_HOUR = 1000 * 60 * 60
 
-    VehicleStop(record(0), record(1), record(2), record(3), record(4), record(5),
+    VehicleStops.VehicleStop(record(0), record(1), record(2), record(3), record(4), record(5),
       record(6), record(7), record(8), getIfExists(record, 9), getIfExists(record, 10),
       getIfExists(record,11), getIfExists(record, 12), getIfExists(record, 13), getIfExists(record, 14)
     )
