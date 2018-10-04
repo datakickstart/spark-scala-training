@@ -1,12 +1,13 @@
-package com.datakickstart.spark.examples.batch
+package com.datakickstart.spark.examples.batch.sql
 
 import java.lang.management.ManagementFactory
 
-import com.datakickstart.spark.examples.VehicleStops.VehicleStopRaw
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
-object SparkSqlExamples extends App {
+import com.datakickstart.common.VehicleStops.VehicleStopRaw
+
+object BasicSparkSqlExample extends App {
 
   val conf = new SparkConf().setAppName("Spark SQL Example")
 

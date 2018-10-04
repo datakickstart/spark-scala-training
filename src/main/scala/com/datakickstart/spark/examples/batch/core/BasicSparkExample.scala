@@ -1,13 +1,13 @@
-package com.datakickstart.spark.examples.batch
+package com.datakickstart.spark.examples.batch.core
 
 import java.lang.management.ManagementFactory
 
-import com.datakickstart.spark.examples.VehicleStops
+import scala.util.Try
 import org.apache.spark.{SparkConf, SparkContext}
 
-import scala.util.Try
+import com.datakickstart.common.VehicleStops
 
-object SparkExamples extends App {
+object BasicSparkExample extends App {
   val logFile = "src/main/resources/vehicle_stops_2016_datasd.csv" // Should be some file on your system
 
   val conf = new SparkConf().setAppName("SparkExample1")

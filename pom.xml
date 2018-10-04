@@ -3,6 +3,8 @@
   <groupId>com.datakickstart.spark</groupId>
   <artifactId>spark-training</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
   <properties>
     <scala.version>2.11.8</scala.version>
     <spark.version>2.3.0</spark.version>
@@ -13,6 +15,14 @@
       <id>scala-tools.org</id>
       <name>Scala-Tools Maven2 Repository</name>
       <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+    <repository>
+      <id>apache-releases</id>
+      <url>https://repository.apache.org/content/groups/public</url>
+    </repository>
+    <repository>
+      <id>maven-central</id>
+      <url>http://central.maven.org/maven2/</url>
     </repository>
   </repositories>
 
@@ -46,6 +56,28 @@
       <version>${spark.version}</version>
     </dependency>
 
+    <!-- Kafka -->
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>0.11.0.0</version>
+    </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>org.apache.kafka</groupId>-->
+      <!--<artifactId>kafka_2.11</artifactId>-->
+      <!--<version>0.11.0.0</version>-->
+      <!--<exclusions>-->
+        <!--<exclusion>-->
+          <!--<groupId>org.slf4j</groupId>-->
+          <!--<artifactId>slf4j-log4j12</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+          <!--<groupId>log4j</groupId>-->
+          <!--<artifactId>log4j</artifactId>-->
+        <!--</exclusion>-->
+      <!--</exclusions>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>junit</groupId>

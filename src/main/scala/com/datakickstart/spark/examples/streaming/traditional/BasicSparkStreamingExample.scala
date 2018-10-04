@@ -1,11 +1,11 @@
-package com.datakickstart.spark.examples.streaming
+package com.datakickstart.spark.examples.streaming.traditional
 
 import java.lang.management.ManagementFactory
 
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
-object SparkStreamingExamples extends App {
+object BasicSparkStreamingExample extends App {
   val logFilePath = "file:///opt/data/sample_data/streaming_example/input" // Should be some file on your system
   val streamingEndpointBase = "localhost"
   val port = 3001

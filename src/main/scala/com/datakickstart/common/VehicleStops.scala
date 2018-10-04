@@ -1,6 +1,6 @@
-package com.datakickstart.spark.examples
+package com.datakickstart.common
 
-import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType}
+import org.apache.spark.sql.types.{StringType, StructField, StructType}
 
 object VehicleStops {
   case class VehicleStop(stopId: String,
@@ -24,6 +24,25 @@ object VehicleStops {
                             subject_sex: String, subject_age: String, timestamp: String, stop_date: String,
                             stop_time: String, sd_resident: String, arrested: String, searched: String,
                             obtained_consent: String, contraband_found: String, property_seized: String)
+
+  val VehicleStopSchema = StructType(
+    StructField("stopId", StringType, nullable = false) ::
+      StructField("stopCause", StringType, nullable = false) ::
+      StructField("serviceArea", StringType, nullable = false) ::
+      StructField("subjectRace", StringType, nullable = false) ::
+      StructField("subjectSex", StringType, nullable = false) ::
+      StructField("subjectAge", StringType, nullable = false) ::
+      StructField("timestamp", StringType, nullable = false) ::
+      StructField("stopDate", StringType, nullable = false) ::
+      StructField("stopTime", StringType, nullable = false) ::
+      StructField("sdResident", StringType, nullable = false) ::
+      StructField("arrested", StringType, nullable = false) ::
+      StructField("searched", StringType, nullable = false) ::
+      StructField("obtainedConsent", StringType, nullable = false) ::
+      StructField("contrabandFound", StringType, nullable = false) ::
+      StructField("propertySeized", StringType, nullable = false) ::
+      Nil)
+
 
   val VehicleStopRawSchema = StructType(
     StructField("stop_id", StringType, nullable = false) ::

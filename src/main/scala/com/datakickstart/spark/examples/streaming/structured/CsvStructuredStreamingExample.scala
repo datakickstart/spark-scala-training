@@ -1,12 +1,13 @@
-package com.datakickstart.spark.examples.streaming
+package com.datakickstart.spark.examples.streaming.structured
 
-import com.datakickstart.spark.examples.VehicleStops
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.streaming.Seconds
 
+import com.datakickstart.common.VehicleStops
 
-object SparkStructuredStreamingExamples extends App {
+
+object CsvStructuredStreamingExample extends App {
   val logFilePath = "file:///opt/data/sample_data/streaming_example/input" // Should be some file on your system
   val streamingEndpointBase = "localhost"
   val port = 3001
