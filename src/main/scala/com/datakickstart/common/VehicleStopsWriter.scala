@@ -8,17 +8,14 @@ import scala.io.Source
 import scala.util.Try
 
 import VehicleStops.VehicleStop
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.gson.Gson
-import org.apache.commons.logging.LogFactory
+import org.slf4j.{Logger, LoggerFactory}
 import org.apache.kafka.clients.producer._
 import org.apache.kafka.common.errors.InterruptException
 import org.apache.kafka.common.serialization.StringSerializer
 
 object VehicleStopsWriter {
-  @transient val logger = LogFactory.getLog(VehicleStopsWriter.getClass)
-
-  private val JSON = new ObjectMapper
+  @transient lazy val logger: Logger = LoggerFactory.getLogger(this.getClass)
 
   @throws[Exception]
   def main(args: Array[String]): Unit = {
