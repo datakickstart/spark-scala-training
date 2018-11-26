@@ -21,7 +21,7 @@ object KafkaStructuredStreamingExample extends App {
     .master("local[*]")
     .getOrCreate()
 
-  val stream = spark
+  val inputData = spark
     .readStream
     .format("kafka")
     .option("subscribe", topic)
@@ -30,7 +30,7 @@ object KafkaStructuredStreamingExample extends App {
 
   import spark.implicits._
 
-  val keyValueData = stream.selectExpr("CAST(key as STRING)", "CAST(value as STRING)")
+  val keyValueData = inputData.selectExpr("CAST(key as STRING)", "CAST(value as STRING)")
 
   val vehicleStopsJson = keyValueData.select(
     from_json(col("value"), VehicleStopSchema).as("record")
